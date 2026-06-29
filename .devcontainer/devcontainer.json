@@ -4,12 +4,24 @@
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {}
   },
+  "remoteEnv": {
+    "TXC_PLAINTEXT_FALLBACK": "1"
+  },
   "customizations": {
     "codespaces": {
       "openFiles": ["README.md"]
     },
     "vscode": {
-      "extensions": ["ms-vscode.powershell"]
+      "extensions": ["ms-vscode.powershell"],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "pwsh",
+        "terminal.integrated.profiles.linux": {
+          "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+          }
+        }
+      }
     }
   },
   "hostRequirements": {
